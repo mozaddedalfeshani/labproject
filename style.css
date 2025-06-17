@@ -1,68 +1,20 @@
 body {
-    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-color: #f8f9fa;
 }
 
 .card {
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
-    border-bottom: none;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
 }
 
-.btn-group .btn {
-    border: none;
-    padding: 10px 30px;
+.table {
+    margin-bottom: 0;
 }
 
-.btn-group .btn.active {
-    background-color: #0056b3;
-}
-
-.form-control {
-    border-radius: 5px;
-    padding: 10px 15px;
-}
-
-.form-control:focus {
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-    border-color: #80bdff;
-}
-
-.btn-primary {
-    padding: 10px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.form-check-label {
-    font-size: 0.9rem;
-}
-
-.card-body {
-    padding: 2rem;
-}
-
-/* Animation for form transition */
-#loginForm, #signupForm {
-    transition: all 0.3s ease;
-}
-
-.form-label {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-/* Error message styling */
-.error-message {
-    color: #dc3545;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
+.btn {
+    min-width: 120px;
 } 
