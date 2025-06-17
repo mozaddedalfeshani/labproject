@@ -1,20 +1,186 @@
-body {
-    background-color: #f8f9fa;
+/* Modern Color Scheme and Base Styles */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --background-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-color: #2d3748;
+    --success-color: #4caf50;
 }
 
+body {
+    background-color: var(--background-color);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+/* Card Styling with Animation */
 .card {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: var(--card-bg);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
 .card-header {
-    background-color: #f8f9fa;
-    border-bottom: 2px solid #dee2e6;
+    background-color: var(--card-bg);
+    border-bottom: 2px solid #edf2f7;
+    border-radius: 15px 15px 0 0 !important;
+    padding: 1.5rem;
 }
 
+.card-header h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+    animation: slideDown 0.5s ease-out;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Form Styling */
+.form-control {
+    border: 2px solid #edf2f7;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Button Styling */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    border: none;
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e0;
+    color: var(--text-color);
+}
+
+/* Table Styling */
 .table {
     margin-bottom: 0;
 }
 
-.btn {
-    min-width: 120px;
+.table thead th {
+    background-color: #f8fafc;
+    border-bottom: 2px solid #edf2f7;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Input Animation */
+.form-floating {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label {
+    transform: translateY(-1.5rem) scale(0.85);
+    color: var(--primary-color);
+}
+
+/* Success Message Animation */
+.success-message {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .card {
+        margin: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
 } 
